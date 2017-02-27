@@ -7,6 +7,7 @@
     import { UtdelComponent } from './utdel.component'
     
     import { AdminRoutingModule } from './admin-routing.module';
+    import { AdminNavbarComponent } from './admin-navbar.component'
     
 
     @NgModule({
@@ -18,7 +19,8 @@
         AdminComponent,
         OppdragComponent,
         OversettelseComponent,
-        UtdelComponent
+        UtdelComponent,
+        AdminNavbarComponent
       ],
       //bootstrap: [ AppComponent ]
     })

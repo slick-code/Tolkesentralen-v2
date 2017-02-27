@@ -12,6 +12,7 @@ export class OppdragComponent {
    arrayOppdrag: Oppdrag[] = [];
    index: number; // valgt index i array
    detaljer: boolean;
+   count: number;
 
     constructor(
         private oppdragService: OppdragService,
@@ -20,6 +21,9 @@ export class OppdragComponent {
         private router: Router) { }
 
     ngOnInit() {
+        this.count = 77;
+
+
         // get users from secure api end point
         this.oppdragService.getOppdrag()
             .subscribe(oppdrag => {

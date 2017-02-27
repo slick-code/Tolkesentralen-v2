@@ -12,12 +12,10 @@ var core_1 = require('@angular/core');
 var AdminComponent = (function () {
     function AdminComponent() {
     }
-    AdminComponent.prototype.ngOnInit = function () {
-        console.log("-> AdminComponent");
-    };
     AdminComponent = __decorate([
         core_1.Component({
-            templateUrl: 'app/admin/admin.component.html',
+            selector: 'admin',
+            template: "\n            <div class=\"container body-content\">\n            <router-outlet ></router-outlet>\n            </div>"
         }), 
         __metadata('design:paramtypes', [])
     ], AdminComponent);

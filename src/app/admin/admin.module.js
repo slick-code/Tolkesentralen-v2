@@ -15,6 +15,7 @@ var oppdrag_component_1 = require('./oppdrag.component');
 var oversettelse_component_1 = require('./oversettelse.component');
 var utdel_component_1 = require('./utdel.component');
 var admin_routing_module_1 = require('./admin-routing.module');
+var admin_navbar_component_1 = require('./admin-navbar.component');
 var AdminModule = (function () {
     function AdminModule() {
     }
@@ -28,7 +29,8 @@ var AdminModule = (function () {
                 admin_component_1.AdminComponent,
                 oppdrag_component_1.OppdragComponent,
                 oversettelse_component_1.OversettelseComponent,
-                utdel_component_1.UtdelComponent
+                utdel_component_1.UtdelComponent,
+                admin_navbar_component_1.AdminNavbarComponent
             ],
         }), 
         __metadata('design:paramtypes', [])

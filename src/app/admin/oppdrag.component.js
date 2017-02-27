@@ -22,6 +22,7 @@ var OppdragComponent = (function () {
     }
     OppdragComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.count = 77;
         // get users from secure api end point
         this.oppdragService.getOppdrag()
             .subscribe(function (oppdrag) {
