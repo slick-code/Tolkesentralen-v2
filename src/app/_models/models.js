@@ -1,0 +1,26 @@
+"use strict";
+var Oppdrag = (function () {
+    function Oppdrag() {
+    }
+    return Oppdrag;
+}());
+exports.Oppdrag = Oppdrag;
+var Tolk = (function () {
+    function Tolk() {
+    }
+    return Tolk;
+}());
+exports.Tolk = Tolk;
+var Oversettelse = (function () {
+    function Oversettelse() {
+    }
+    return Oversettelse;
+}());
+exports.Oversettelse = Oversettelse;
+var Kunde = (function () {
+    function Kunde() {
+    }
+    return Kunde;
+}());
+exports.Kunde = Kunde;
+//# sourceMappingURL=models.js.map
