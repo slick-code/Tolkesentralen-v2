@@ -9,15 +9,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var data_service_1 = require('../_services/data.service');
 var AdminComponent = (function () {
-    function AdminComponent() {
+    function AdminComponent(dataService) {
+        this.dataService = dataService;
     }
+    AdminComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.dataService.getData().subscribe(function (data) {
+            _this.temp = data;
+            _this.element = _this.temp;
+            switch (_this.element.element) {
+                case 'oppdrag':
+                    _this.antallOppdrag = _this.element.nr;
+                    break;
+                case 'oversettelse':
+                    _this.antallOversettelser = _this.element.nr;
+                    break;
+            }
+            _this.sum = _this.getSum();
+        });
+    };
+    AdminComponent.prototype.getSum = function () {
+        var sum = 0;
+        sum += this.antallOppdrag == null ? 0 : this.antallOppdrag;
+        sum += this.antallOversettelser == null ? 0 : this.antallOversettelser;
+        return sum == 0 ? "" : "" + sum;
+    };
     AdminComponent = __decorate([
         core_1.Component({
             selector: 'admin',
-            template: "\n            <div class=\"container body-content\">\n            <router-outlet ></router-outlet>\n            </div>"
+            templateUrl: "./app/admin/admin.component.html"
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [data_service_1.DataService])
     ], AdminComponent);
     return AdminComponent;
 }());

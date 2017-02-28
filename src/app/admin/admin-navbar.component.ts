@@ -10,4 +10,9 @@ export class AdminNavbarComponent  {
     @Input('antallOppdrag') antallOppdrag: number;
     @Input('antallOversettelser') antallOversettelser: number;
     @Input('antallKunder') antallKunder: number;
+    test: number = 1;
+
+    getSum(){
+      this.test++;;
+    }
 }

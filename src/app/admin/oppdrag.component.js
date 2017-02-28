@@ -12,8 +12,11 @@ var core_1 = require('@angular/core');
 var oppdrag_service_1 = require('../_services/oppdrag.service');
 var router_1 = require('@angular/router');
 var temp_service_1 = require('../_services/temp.service');
+var data_service_1 = require('../_services/data.service');
+var models_1 = require('../_models/models');
 var OppdragComponent = (function () {
-    function OppdragComponent(oppdragService, route, tempService, router) {
+    function OppdragComponent(dataService, oppdragService, route, tempService, router) {
+        this.dataService = dataService;
         this.oppdragService = oppdragService;
         this.route = route;
         this.tempService = tempService;
@@ -27,6 +30,10 @@ var OppdragComponent = (function () {
         this.oppdragService.getOppdrag()
             .subscribe(function (oppdrag) {
             _this.arrayOppdrag = oppdrag;
+            _this.element = new models_1.NavbarElement();
+            _this.element.nr = _this.arrayOppdrag.length;
+            _this.element.element = 'oppdrag';
+            _this.dataService.updateData(_this.element);
         });
     };
     /*onUtdel(oppdrag: Oppdrag) {
@@ -49,7 +56,7 @@ var OppdragComponent = (function () {
         core_1.Component({
             templateUrl: "./app/admin/oppdrag.component.html"
         }), 
-        __metadata('design:paramtypes', [oppdrag_service_1.OppdragService, router_1.ActivatedRoute, temp_service_1.TempService, router_1.Router])
+        __metadata('design:paramtypes', [data_service_1.DataService, oppdrag_service_1.OppdragService, router_1.ActivatedRoute, temp_service_1.TempService, router_1.Router])
     ], OppdragComponent);
     return OppdragComponent;
 }());

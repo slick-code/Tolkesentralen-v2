@@ -3,6 +3,8 @@ import { Oppdrag } from '../_models/models'
 import { OppdragService } from '../_services/oppdrag.service'
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { TempService} from '../_services/temp.service'
+import { DataService } from '../_services/data.service'
+import { NavbarElement } from '../_models/models'
 
 
 @Component({
@@ -13,8 +15,10 @@ export class OppdragComponent {
    index: number; // valgt index i array
    detaljer: boolean;
    count: number;
+   element: NavbarElement;
 
     constructor(
+        private dataService: DataService,
         private oppdragService: OppdragService,
         private route: ActivatedRoute,
         private tempService: TempService,
@@ -23,12 +27,17 @@ export class OppdragComponent {
     ngOnInit() {
         this.count = 77;
 
+        
 
         // get users from secure api end point
         this.oppdragService.getOppdrag()
             .subscribe(oppdrag => {
                 this.arrayOppdrag = oppdrag;
-            });
+                this.element = new NavbarElement();
+                this.element.nr= this.arrayOppdrag.length;
+                this.element.element = 'oppdrag';
+                this.dataService.updateData(this.element);
+            }); 
     }
 
     /*onUtdel(oppdrag: Oppdrag) {

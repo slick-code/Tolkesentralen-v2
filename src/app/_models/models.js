@@ -1,4 +1,10 @@
 "use strict";
+var NavbarElement = (function () {
+    function NavbarElement() {
+    }
+    return NavbarElement;
+}());
+exports.NavbarElement = NavbarElement;
 var Oppdrag = (function () {
     function Oppdrag() {
     }

@@ -1,3 +1,8 @@
+export class NavbarElement {
+    nr: number;
+    element: string;
+}
+
 export class Oppdrag {
     id: number;
     dato: string;

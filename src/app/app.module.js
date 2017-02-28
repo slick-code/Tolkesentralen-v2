@@ -17,6 +17,7 @@ var auth_service_1 = require('./_services/auth.service');
 var auth_guard_1 = require('./_guards/auth.guard');
 var oppdrag_service_1 = require('./_services/oppdrag.service');
 var temp_service_1 = require('./_services/temp.service');
+var data_service_1 = require('./_services/data.service');
 var http_1 = require('@angular/http');
 // used to create fake backend
 var fake_backend_1 = require('./_helpers/fake-backend');
@@ -37,6 +38,7 @@ var AppModule = (function () {
                 auth_service_1.AuthenticationService,
                 oppdrag_service_1.OppdragService,
                 temp_service_1.TempService,
+                data_service_1.DataService,
                 // providers used to create fake backend
                 fake_backend_1.fakeBackendProvider,
                 testing_1.MockBackend,

@@ -11,6 +11,7 @@ import { AuthenticationService } from './_services/auth.service';
 import { AuthGuard } from './_guards/auth.guard';
 import { OppdragService } from './_services/oppdrag.service'
 import { TempService } from './_services/temp.service'
+import { DataService } from './_services/data.service'
 
 import { HttpModule } from '@angular/http';
 // used to create fake backend
@@ -30,6 +31,7 @@ import { PageNotFoundComponent }   from './shared/not-found.component';
         AuthenticationService,
         OppdragService,
         TempService,
+        DataService,
 
         // providers used to create fake backend
         fakeBackendProvider,
