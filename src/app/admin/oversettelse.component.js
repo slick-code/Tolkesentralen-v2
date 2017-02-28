@@ -20,7 +20,6 @@ var OversettelseComponent = (function () {
     }
     OversettelseComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.count = 5;
         // get users from secure api end point
         this.oppdragService.getOversettelser()
             .subscribe(function (oppdrag) {

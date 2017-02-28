@@ -10,7 +10,6 @@ import { DataService } from '../_services/data.service'
 })
 export class OversettelseComponent {
    arrayOversettelse: Oppdrag[] = [];
-   count: number;
    element: NavbarElement;
 
     constructor(
@@ -18,7 +17,7 @@ export class OversettelseComponent {
         private dataService: DataService) { }
 
     ngOnInit() {
-        this.count = 5;
+
         // get users from secure api end point
         this.oppdragService.getOversettelser()
             .subscribe(oppdrag => {
